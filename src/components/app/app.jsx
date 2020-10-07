@@ -20,7 +20,7 @@ const App = (props) => {
       <Switch>
         <Route exact path="/" render={({history}) => (
           <WelcomeScreen
-            onPlayButtonClick={() => history.pushState(`/game`)}
+            onPlayButtonClick={() => history.push(`/game`)}
             errorsCount={errorsCount} />
         )} />
 
@@ -31,7 +31,7 @@ const App = (props) => {
         </Route>
         <Route exact path="/dev-genre">
           <GenreQuestionScreen
-            question={secondQuestion}
+            question={firstQuestion}
             onAnswer={() => {}} />
         </Route>
         <Route exact path="/login">
@@ -45,7 +45,7 @@ const App = (props) => {
         </Route>
         <Route exact path="/game">
           <GameScreen
-            errorsCount={errorsCount}}
+            errorsCount={errorsCount}
             questions={questions} />
         </Route>
       </Switch>

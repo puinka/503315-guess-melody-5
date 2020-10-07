@@ -19,7 +19,7 @@ class GameScreen extends PureComponent {
     const {step} = this.state;
     const question = questions[step];
 
-    if (step >= question.length || !question) {
+    if (step >= questions.length || !question) {
       return (
         <Redirect to="/" />
       );
