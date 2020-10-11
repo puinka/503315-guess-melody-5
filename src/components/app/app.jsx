@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import {appPropTypes} from "./propTypes";
 import {Switch, Route, BrowserRouter} from "react-router-dom";
 import WelcomeScreen from "../welcome-screen/welcome-screen";
 import AuthScreen from "../auth-screen/auth-screen";
@@ -12,7 +12,7 @@ import GameScreen from "../game-screen/game-screen";
 const App = (props) => {
 
   const {errorsCount, questions} = props;
-  const [firstQuestion, secondQuestion] = questions;
+  const [genreQuestion, artistQuestion] = questions;
 
   return (
 
@@ -26,12 +26,12 @@ const App = (props) => {
 
         <Route exact path="/dev-artist">
           <ArtistQuestionScreen
-            question={secondQuestion}
+            question={artistQuestion}
             onAnswer={() => {}} />
         </Route>
         <Route exact path="/dev-genre">
           <GenreQuestionScreen
-            question={firstQuestion}
+            question={genreQuestion}
             onAnswer={() => {}} />
         </Route>
         <Route exact path="/login">
@@ -53,9 +53,6 @@ const App = (props) => {
   );
 };
 
-App.propTypes = {
-  errorsCount: PropTypes.number.isRequired,
-  questions: PropTypes.array.isRequired
-};
+App.propTypes = appPropTypes;
 
 export default App;
