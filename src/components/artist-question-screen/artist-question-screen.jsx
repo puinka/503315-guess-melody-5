@@ -1,5 +1,6 @@
 import React from "react";
 import {artistQuestionPropsTypes} from "./propTypes";
+import AudioPlayer from "../audio-player/audio-player";
 
 const ArtistQuestionScreen = (props) => {
   const {onAnswer, question} = props;
@@ -29,10 +30,10 @@ const ArtistQuestionScreen = (props) => {
 
         <div className="game__track">
           <div className="track">
-            <button className="track__button track__button--play" type="button"></button>
-            <div className="track__status">
-              <audio src={song.src} />
-            </div>
+
+            <AudioPlayer
+              isPlaying={true}
+              src={song.src} />
           </div>
         </div>
 
