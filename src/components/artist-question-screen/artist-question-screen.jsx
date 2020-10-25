@@ -1,5 +1,5 @@
 import React from "react";
-import {artistQuestionPropsTypes} from "./propTypes";
+import {artistQuestionPropTypes} from "./propTypes";
 
 const ArtistQuestionScreen = (props) => {
 
@@ -61,6 +61,6 @@ const ArtistQuestionScreen = (props) => {
 
 };
 
-ArtistQuestionScreen.propTypes = artistQuestionPropsTypes;
+ArtistQuestionScreen.propTypes = artistQuestionPropTypes;
 
 export default ArtistQuestionScreen;
