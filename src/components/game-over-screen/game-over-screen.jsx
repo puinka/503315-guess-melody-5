@@ -1,6 +1,6 @@
 import React from "react";
 
-const GameOverScreen = () => {
+export const GameOverScreen = () => {
   return (
     <section className="result">
       <div className="result__logo"><img src="img/melody-logo.png" alt="Угадай мелодию" width="186" height="83" /></div>
@@ -10,5 +10,3 @@ const GameOverScreen = () => {
     </section>
   );
 };
-
-export default GameOverScreen;

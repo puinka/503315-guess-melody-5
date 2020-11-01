@@ -1,16 +1,15 @@
-import React, {PureComponent} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import {Redirect} from "react-router-dom";
 import {GameType} from "../../constants";
-import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen";
-import GenreQuestionScreen from "../genre-question-screen/genre-question-screen";
-
-import withAudioPlayer from "../../hocs/with-audio-player/with-audio-player";
+import {ArtistQuestionScreen} from "../artist-question-screen/artist-question-screen";
+import {GenreQuestionScreen} from "../genre-question-screen/genre-question-screen";
+import {withAudioPlayer} from "../../hocs/with-audio-player/with-audio-player";
 
 const GenreQuestionScreenWrapped = withAudioPlayer(GenreQuestionScreen);
 const ArtistQuestionScreenWrapped = withAudioPlayer(ArtistQuestionScreen);
 
-class GameScreen extends PureComponent {
+export class GameScreen extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -29,7 +28,6 @@ class GameScreen extends PureComponent {
         <Redirect to="/" />
       );
     }
-
     switch (question.type) {
       case GameType.ARTIST:
         return (
@@ -55,4 +53,3 @@ GameScreen.propTypes = {
   questions: PropTypes.array.isRequired
 };
 
-export default GameScreen;

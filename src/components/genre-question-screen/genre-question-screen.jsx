@@ -1,10 +1,9 @@
-import React, {PureComponent} from "react";
+import React from "react";
 import {genreQuestionPropTypes} from "./propTypes";
 
-class GenreQuestionScreen extends PureComponent {
+export class GenreQuestionScreen extends React.PureComponent {
   constructor(props) {
     super(props);
-
 
     this.state = {
       answers: [false, false, false, false]
@@ -46,17 +45,13 @@ class GenreQuestionScreen extends PureComponent {
 
             {answers.map((answer, i) => (
               <div key={`${i}-${answer.src}`} className="track">
-
-
                 {renderPlayer(answer.src, i)}
-
                 <div className="game__answer">
                   <input className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${i}`}
                     id={`answer-${i}`}
                     checked={userAnswers[i]}
                     onChange={(evt) => {
                       const value = evt.target.checked;
-
                       this.setState({
                         answers: [...userAnswers.slice(0, i), value, ...userAnswers.slice(i + 1)],
                       });
@@ -66,9 +61,7 @@ class GenreQuestionScreen extends PureComponent {
                 </div>
               </div>
             ))}
-
             <button className="game__submit button" type="submit">Ответить</button>
-
           </form>
         </section>
       </section>
@@ -77,5 +70,3 @@ class GenreQuestionScreen extends PureComponent {
 }
 
 GenreQuestionScreen.propTypes = genreQuestionPropTypes;
-
-export default GenreQuestionScreen;

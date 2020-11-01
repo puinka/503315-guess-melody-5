@@ -1,12 +1,12 @@
-import React, {PureComponent, Fragment, createRef} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 
-export default class AudioPlayer extends PureComponent {
+export class AudioPlayer extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.audioRef = createRef();
+    this.audioRef = React.createRef();
 
     this.state = {
       isLoading: true
@@ -22,16 +22,11 @@ export default class AudioPlayer extends PureComponent {
     audio.oncanplaythrough = () => this.setState({
       isLoading: false
     });
-
-
   }
 
   componentWillUnmount() {
-
     const audio = this.audioRef.current;
-
     audio.oncanplaythrough = null;
-
   }
 
   render() {
@@ -39,7 +34,7 @@ export default class AudioPlayer extends PureComponent {
     const {onPlayButtonClick, isPlaying} = this.props;
 
     return (
-      <Fragment>
+      <React.Fragment>
         <button
           className={`track__button track__button--${isPlaying ? `pause` : `play`}`}
           type="button"
@@ -50,7 +45,7 @@ export default class AudioPlayer extends PureComponent {
           <audio
             ref={this.audioRef} />
         </div>
-      </Fragment>
+      </React.Fragment>
     );
   }
 
@@ -63,8 +58,6 @@ export default class AudioPlayer extends PureComponent {
       audio.pause();
     }
   }
-
-
 }
 
 AudioPlayer.propTypes = {

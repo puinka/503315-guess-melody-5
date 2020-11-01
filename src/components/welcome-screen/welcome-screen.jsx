@@ -1,7 +1,7 @@
 import React from "react";
 import {welcomeScreenPropTypes} from "./propTypes";
 
-const WelcomeScreen = (props) => {
+export const WelcomeScreen = (props) => {
 
   const {errorsCount, onPlayButtonClick} = props;
 
@@ -23,5 +23,3 @@ const WelcomeScreen = (props) => {
 };
 
 WelcomeScreen.propTypes = welcomeScreenPropTypes;
-
-export default WelcomeScreen;

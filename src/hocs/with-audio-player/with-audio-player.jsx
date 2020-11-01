@@ -1,8 +1,8 @@
-import React, {PureComponent} from "react";
-import AudioPlayer from "../../components/audio-player/audio-player";
+import React from "react";
+import {AudioPlayer} from "../../components/audio-player/audio-player";
 
-const withActivePlayer = (Component) => {
-  class WithActivePlayer extends PureComponent {
+export const withAudioPlayer = (Component) => {
+  class WithActivePlayer extends React.PureComponent {
     constructor(props) {
       super(props);
 
@@ -36,4 +36,3 @@ const withActivePlayer = (Component) => {
   return WithActivePlayer;
 };
 
-export default withActivePlayer;

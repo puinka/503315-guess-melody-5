@@ -1,6 +1,6 @@
 import React from "react";
 
-const AuthScreen = () => {
+export const AuthScreen = () => {
   return (
     <section className="login">
       <div className="login__logo">
@@ -25,4 +25,3 @@ const AuthScreen = () => {
   );
 };
 
-export default AuthScreen;

@@ -1,18 +1,16 @@
 import React from "react";
 import {appPropTypes} from "./propTypes";
 import {Switch, Route, BrowserRouter} from "react-router-dom";
-import WelcomeScreen from "../welcome-screen/welcome-screen";
-import AuthScreen from "../auth-screen/auth-screen";
-import WinScreen from "../win-screen/win-screen";
-import GameOverScreen from "../game-over-screen/game-over-screen";
-import GameScreen from "../game-screen/game-screen";
+import {WelcomeScreen} from "../welcome-screen/welcome-screen";
+import {AuthScreen} from "../auth-screen/auth-screen";
+import {WinScreen} from "../win-screen/win-screen";
+import {GameOverScreen} from "../game-over-screen/game-over-screen";
+import {GameScreen} from "../game-screen/game-screen";
 
-const App = (props) => {
-
+export const App = (props) => {
   const {errorsCount, questions} = props;
 
   return (
-
     <BrowserRouter>
       <Switch>
         <Route exact path="/" render={({history}) => (
@@ -20,8 +18,6 @@ const App = (props) => {
             onPlayButtonClick={() => history.push(`/game`)}
             errorsCount={errorsCount} />
         )} />
-
-
         <Route exact path="/login">
           <AuthScreen />
         </Route>
@@ -42,5 +38,3 @@ const App = (props) => {
 };
 
 App.propTypes = appPropTypes;
-
-export default App;
