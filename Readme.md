@@ -1,7 +1,7 @@
 # Учебный проект «Угадай мелодию» [![Build status][travis-image]][travis-url]
 
 * Студент: [Valeria Vozzheva](https://up.htmlacademy.ru/react/5/user/503315).
-* Наставник: [Елена Феоктистова](https://up.htmlacademy.ru/react/5/user/1154563).
+* Наставник: [Раиль Сахавиев](https://up.htmlacademy.ru/react/5/user/1331891).
 
 ---
 
